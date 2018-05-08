@@ -2,10 +2,10 @@ package com.company;
  import java.util.*;
 
 public class Main {
-     public static class ComparatorByIndex implements Comparator{
+     public static class ComparatorByIndex implements Comparator {
          int index;
 
-         ComparatorByIndex(int index){
+         ComparatorByIndex(int index) {
              this.index = index;
          }
 
@@ -31,7 +31,7 @@ public class Main {
             return;
         }
 
-        if (args.length > 1){
+        if (args.length > 1) {
             System.out.println("Only 1 argument pls");
             return;
         }
@@ -40,12 +40,12 @@ public class Main {
         try{
            index  = Integer.parseInt(args[0].trim());
          }
-        catch (NumberFormatException e){
+        catch (NumberFormatException e) {
             System.out.println("fck u dude. Write number as an argument.");
             return;
         }
 
-        if (index <= 0){
+        if (index <= 0) {
             System.out.println("That wont work. Bye");
             return;
         }
