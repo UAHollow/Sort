@@ -1,30 +1,30 @@
 package com.company;
- import java.util.*;
+import java.util.*;
 
 public class Main {
-     public static class ComparatorByIndex implements Comparator {
-         int index;
+    public static class ComparatorByIndex implements Comparator {
+        int index;
 
-         ComparatorByIndex(int index) {
-             this.index = index;
-         }
+        ComparatorByIndex(int index) {
+         this.index = index;
+        }
 
-         @Override
-         public int compare(Object o1, Object o2) {
-             String string1 = o1.toString();
-             String string2 = o2.toString();
-             String[] substrings1 = string1.split(" ");
-             String[] substrings2 = string2.split(" ");
-             if (substrings1.length >= index && substrings2.length >= index) {
-                int wordIdex = index-1;
-                return substrings1[wordIdex].compareToIgnoreCase(substrings2[wordIdex]);
-             }else if (substrings1.length < index) {
-                 return 1;
-             }else {
-                 return -1;
-             }
-         }
-     }
+        @Override
+        public int compare(Object o1, Object o2) {
+            String string1 = o1.toString();
+            String string2 = o2.toString();
+            String[] substrings1 = string1.split(" ");
+            String[] substrings2 = string2.split(" ");
+            if (substrings1.length >= index && substrings2.length >= index) {
+               int wordIndex = index-1;
+               return substrings1[wordIndex].compareToIgnoreCase(substrings2[wordIndex]);
+            } else if (substrings1.length < index) {
+                return 1;
+            } else {
+                return -1;
+            }
+        }
+    }
 
     public static void main(String[] args) {
         if (args.length == 0) {
@@ -39,12 +39,12 @@ public class Main {
 
         int index;
 
-        try{
+        try {
             index  = Integer.parseInt(args[0].trim());
-         }catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             System.out.println("fck u dude. Write number as an argument.");
             return;
-         }
+        }
 
         if (index <= 0) {
             System.out.println("That wont work. Bye");
@@ -62,6 +62,4 @@ public class Main {
             System.out.println(words);
         }
     }
- }
-
-
+}
