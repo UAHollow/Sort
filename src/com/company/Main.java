@@ -6,7 +6,7 @@ public class Main {
         int index;
 
         ComparatorByIndex(int index) {
-         this.index = index;
+            this.index = index;
         }
 
         @Override
@@ -16,8 +16,8 @@ public class Main {
             String[] substrings1 = string1.split(" ");
             String[] substrings2 = string2.split(" ");
             if (substrings1.length >= index && substrings2.length >= index) {
-               int wordIndex = index-1;
-               return substrings1[wordIndex].compareToIgnoreCase(substrings2[wordIndex]);
+                int wordIndex = index-1;
+                return substrings1[wordIndex].compareToIgnoreCase(substrings2[wordIndex]);
             } else if (substrings1.length < index) {
                 return 1;
             } else {
