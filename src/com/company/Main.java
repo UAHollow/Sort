@@ -18,15 +18,16 @@ public class Main {
              if (substrings1.length >= index && substrings2.length >= index) {
                 int wordIdex = index-1;
                 return substrings1[wordIdex].compareToIgnoreCase(substrings2[wordIdex]);
+             }else if (substrings1.length < index) {
+                 return 1;
+             }else {
+                 return -1;
              }
-             else if (substrings1.length < index) return 1;
-             else return -1;
          }
      }
 
     public static void main(String[] args) {
-
-         if (args.length == 0) {
+        if (args.length == 0) {
             System.out.println("There is no arguments to work with. Bye!");
             return;
         }
@@ -37,13 +38,13 @@ public class Main {
         }
 
         int index;
+
         try{
-           index  = Integer.parseInt(args[0].trim());
-         }
-        catch (NumberFormatException e) {
+            index  = Integer.parseInt(args[0].trim());
+         }catch (NumberFormatException e) {
             System.out.println("fck u dude. Write number as an argument.");
             return;
-        }
+         }
 
         if (index <= 0) {
             System.out.println("That wont work. Bye");
@@ -56,10 +57,9 @@ public class Main {
             inputs.add(scanner.nextLine().trim());
         }
         ComparatorByIndex comp = new ComparatorByIndex(index);
-            inputs.sort(comp);
-            for (String words : inputs) {
-                System.out.println(words);
-
+        inputs.sort(comp);
+        for (String words : inputs) {
+            System.out.println(words);
         }
     }
  }
